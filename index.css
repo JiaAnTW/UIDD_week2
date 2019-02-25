@@ -44,7 +44,7 @@ body{
     color: white;
     font-family: 'Oswald';
     z-index: 2;
-    font-size: 6rem;
+    font-size: 60px;
     font-weight: 400;
     margin-left:-355px;
     animation: slidein 6.5s ;
@@ -52,14 +52,14 @@ body{
   }
   #subTopic{
     position: absolute;
-    top: 25rem;
-    left: 0.5rem;
+    top: 300px;
+    left: 5px;
     color: white;
     font-family: 'Oswald';
     z-index: 2;
-    font-size: 2.5rem;
+    font-size: 25px;
     font-weight: 200;
-    width: 37rem;
+    width: 370px;
     margin-left:-355px;
     animation: slidein 8.5s ;
     animation-fill-mode:forwards;
@@ -68,10 +68,10 @@ body{
 
   #container{
     position: absolute;
-    top: 17rem;
-    left: 32rem;
-    width:80rem;
-    height:50rem;
+    top: 170px;
+    left: 390px;
+    width:800px;
+    height:500px;
     animation: reveal 6s ;
     display:inline-block;
     overflow:hidden;
@@ -81,78 +81,78 @@ body{
   
   #btnContainer{
     position: absolute;
-    top: 35rem;
-    width: 30rem;
-    height: 4.5rem;
+    top: 450px;
+    width: 300px;
+    height: 45px;
     animation: slideinBtn 9s ;
   }
 
 
   #spons{
     position: absolute;
-    height: 4.5rem;
-    width: 18rem;
+    height: 45px;
+    width: 180px;
     background-color: orangered;
     font-family: 'Oswald';
-    font-size: 2rem;
+    font-size: 20px;
     text-align: right;
     font-weight: 400;
     color: white;
     border: none;
-    left: 0rem;
+    left: 0px;
     z-index: 3;
   }
 
   #sponsBtn{
     position: absolute;
-    height: 4.5rem;
-    width: 4rem;
+    height: 4.50px;
+    width: 40px;
     background-color: orangered;
     text-align: center;
     font-family: 'Oswald';
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 40px;
+    line-height: 35px;
     color: white;
     border: none;
     text-align: left;
-    left: 14rem;
+    left: 140px;
     transition: left 0.5s ease-out 0s;
     z-index: 2;
   }
 
   #sponsBack{
     position: absolute;
-    height: 4.5rem;
-    width: 8rem;
+    height: 45px;
+    width: 80px;
     background-color: orangered;
     font-family: 'Oswald';
     color: white;
     border: none;
-    left: 14rem;
+    left: 140px;
     transition: left 0.5s ease-out 0s;
     z-index: 2;
   }
 
   #btnContainer:hover > #sponsBack{
-    left: 18rem;
+    left: 180px;
   }
 
   #btnContainer:hover > #sponsBtn{
-    left: 20rem;
+    left: 200px;
   }
   
   @keyframes slidein {
       0% { margin-left:-800px; }
       20% { margin-left:-800px; }
-      35% { margin-left:2rem; }
-      100% { margin-left:2rem; }
+      35% { margin-left:20px; }
+      100% { margin-left:20px; }
   }
 
   @keyframes slideRight {
     0% { margin-right:-800px; }
     20% { margin-right:-800px; }
-    35% { margin-right:2rem; }
-    100% { margin-right:2rem; }
+    35% { margin-right:20px; }
+    100% { margin-right:20px; }
 }
 
   @keyframes slideinBtn {
@@ -165,23 +165,23 @@ body{
   @keyframes reveal {
       0% {opacity:0;width:0px;}
       20% {opacity:1;width:0px;}
-      30% {width:80rem;}
+      30% {width:800px;}
       80% {opacity:1;}
   }
 
   @keyframes revealSmall {
     0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
-    30% {width:10rem;}
+    30% {width:100px;}
     80% {opacity:1;}
 }
   
 
   .navContainer{
     position: absolute;
-    top: 2rem;
+    top: 20px;
     animation: revealSmall 6s ;
-    height: 10rem;
+    height: 100px;
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
@@ -192,7 +192,7 @@ body{
   h2{
     color: gray;
     font-family: 'Oswald';
-    font-size: 3rem;
+    font-size: 30px;
     z-index: 4;
     font-weight: 100;
     animation: slidein 9s ;
@@ -205,19 +205,19 @@ body{
 
   #start{
     position: absolute;
-    top: 4rem;
-    right: 5rem;
+    top: 50px;
+    right: 50px;
     background-color: rgba(0, 0, 0, 0);
     border-color: white;
     color: white;
     font-family: 'Oswald';
-    font-size: 2.5rem;
+    font-size: 25px;
     font-weight: 300;
-    height: 4rem;
+    height: 40px;
     border-width: 0.5px;
     
     border-style:solid;
-    width: 17rem;
+    width: 170px;
     z-index: 4;
     display:inline-block;
     overflow:hidden;
@@ -228,8 +228,110 @@ body{
   @keyframes slideinStart {
     0% { width:0px;opacity:0; }
     20% { width:0px; opacity:0;}
-    45% { width:17rem; opacity:1;}
-    100% { width:17rem; }
+    45% { width:170px; opacity:1;}
+    100% { width:170px; }
 }
 
 
+#profile_container{
+  position: absolute;
+  bottom: 2px;
+  right: 0px;
+  width: 400px;
+  height: auto;
+  background-color: white;
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+#profile_container img{
+  width: 100px;
+  height: auto;
+}
+
+
+#profile_container2{
+  position: relative;
+  top:0px;
+  left: 0px;
+  height: auto;
+  width: auto;
+  animation: fly 8s ;
+}
+
+#profile_container span{
+  position: absolute;
+  height: auto;
+  width: 300px;
+  font-size: 30px;
+  text-align: center;
+  top:37px;
+  right: 0;
+}
+
+@keyframes fly {
+  0% { margin-bottom:-200;  }
+  20% { margin-bottom:-200;}
+  45% { margin-bottom:0;}
+  100% { margin-bottom:0; }
+}
+
+#scroll_text{
+  font-family: 'Oswald';
+  font-size: 25px;
+  font-weight: 200;
+  position: absolute;
+  top:700px;
+  left:10%;
+  color: white;
+  transform: rotate(270deg);
+  animation: flyDown1 8s ;
+}
+
+#scroll_bar{
+  position: absolute;
+  top:660px;
+  left:15%;
+  background-color: orangered;
+  width: 1px;
+  height: 50px;
+  animation: flyDown2 9s ;
+}
+
+
+@keyframes flyDown1 {
+  0% { top:-150;  }
+  20% { top:-150;}
+  45% { top:700px;}
+  100% { top:700px; }
+}
+
+@keyframes flyDown2 {
+  0% { top:-150;  }
+  20% { top:-150;}
+  45% { top:660px;}
+  100% { top:660px; }
+}
+
+
+#bar{
+  position: absolute;
+  top: 100px;
+  left: 820px;
+  background-color: rgba(243, 243, 243, 0.1);
+  height: 25px;
+  width: 70px;
+  z-index: 4;
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  animation: slideinBar 8s ;
+}
+
+@keyframes slideinBar {
+  0% { width:0px;opacity:0; }
+  20% { width:0px; opacity:0;}
+  45% { width:75px; opacity:1;}
+  100% { width:75px; }
+}
