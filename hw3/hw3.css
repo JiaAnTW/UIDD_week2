@@ -1,0 +1,42 @@
+body{
+    background-image: url("./back.jpg");
+    background-repeat: no-repeat;
+    background-size: 85vw auto ;
+}
+
+#train{
+    width: 39vw;
+    position: absolute;
+    margin-top: 37.5vw;
+    left: 18.9vw;
+    transition-property: left;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#bot{
+    width: 47vw;
+    position: absolute;
+    margin-top: 22.7vw;
+    margin-left: -0.5vw;
+}
+
+#start{
+    background-image: none;
+    position: absolute;
+    margin-left: 68.25vw;
+    margin-top: 26.45vw;
+    width: 8.28vw;
+    height: 4vw;
+    background-size: 100% auto ;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#start:hover{
+    background-image: url("./start.png");
+}
+
+#start:hover ~ #train{
+    left: 30vw;
+}
