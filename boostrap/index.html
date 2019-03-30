@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bootstap pratice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <style>
+      html{
+        font-size: 20px;
+        font-size:1.2vw;
+      }
+      #list-container {
+        width: 30rem;
+      }
+      
+      #list-container .card{
+        border-radius:0px;
+        min-width: 30rem;
+        border: none;
+      }
+
+      #list-container img{
+        margin-top: 1rem;
+        width:5rem;
+        height:5rem;
+        border-radius:0px;
+      }
+
+      #list-container h5, #list-container p{
+        margin-left: 4.4rem;
+        margin-right: 1rem;
+        font-family: "Microsoft JhengHei";
+      }
+
+      #list-container h5{
+        margin-top: -6rem;
+        font-size: 0.9rem;
+        font-weight:600;
+      }
+
+      #list-container p{
+        font-size: 0.7rem;
+      }
+
+      #list-container .card-link{
+        position:absolute;
+        color: rgb(234, 35, 6);
+        margin-left: 27rem;
+        margin-top: -6rem;
+      }
+
+      #list-container .invisible_btn{
+        position:absolute;
+        outline:none;
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0,0);
+        border:none;
+        border-bottom: 0.5px solid rgba(0,0,0,0.3);
+      }
+
+      #list-container .invisible_btn:hover{
+        border-bottom: none;
+      }
+
+      .modal-content{
+        border-radius:0px;
+      }
+
+      button.close{
+        position:absolute;
+        right:-1rem;
+        top:-1rem;
+        background-color:rgb(234, 35, 6);
+        color: white;
+        opacity: 1;
+        font-size:1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius:2rem;
+      }
+
+      button.close:hover{
+        background-color:rgb(234, 35, 6);
+        color: white;
+        opacity: 1;
+      }
+
+      .modal-dialog{
+        width: 23rem;
+        font-family: "Microsoft JhengHei";
+      }
+
+      #exampleModalLabel{
+        font-weight:600;
+      }
+      
+      #price{
+        margin-left:1rem;
+        color: rgb(234, 35, 6);
+      }
+
+      #finsih-btn{
+        background-color:rgb(234, 35, 6);
+        color: white;
+        width: 90%;
+        margin-left:5%;
+        border: none;
+        border-radius:0px;
+      }
+
+      #number-title{
+        font-weight:600;
+      }
+
+      #sub,#add{
+        background-color:rgba(0, 0, 0,0);
+        color: rgb(234, 35, 6);
+        width: 1.5rem;
+        font-size: 1rem;
+        line-height: 0.1rem;
+        height: 1.5rem;
+        border: 0.1rem solid rgb(234, 35, 6);
+        border-radius:5rem;
+      }
+
+      #sub{
+        margin-left: 60%;
+      }
+
+      #number,#add{
+        margin-left: 3%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container" id="list-container">
+    </div>
+    <div class="container" id="modal-container">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+          </button>
+          <img id="modal-img" src="./dumpling.jpg" alt="dumpling">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            </div>
+          <span class="modal-title" id="price">$5</span>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-body" id="counter">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">加入購買</button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-secondary" id="finsih-btn" data-dismiss="modal">+ 加入購買</button>
+            
+        </div>
+      </div>
+    </div>
+    </div>
+    <script>
+        const dish_number=5;
+        var menu=[];
+        for(var i=0;i<dish_number;++i){
+          menu.push(
+            {
+              img:"https://i.imgur.com/M833bM4.jpg",
+              name:"第"+(i+1).toString()+"家光復八方雲集",
+              describe:"我最近特別喜歡吃光餐的第"+(i+1).toString()+"家八方，因為我覺得很划算，明明只買10個鍋貼，它居然還送我刀片。他怎麼會知道我是系上營隊的美宣組，剛好需要刀片，太貼心了。",
+              price: 40+i,
+            }
+          );
+        }
+        const spawnCard=(n)=>{
+          var output='';
+          for(let i=0;i<n;++i){
+            output+='<div class="row"><div class="card"><img src="" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title"></h5><p class="card-text"></p><p class="card-link">$5</p></div><button class="invisible_btn" onclick="fillModal('+i+')" data-toggle="modal" data-target="#exampleModal"></button></div></div>';
+          }
+          document.getElementById("list-container").innerHTML=output;
+        }
+        spawnCard(dish_number);
+
+        const fillList=(n)=>{
+          for(let i=0;i<n;++i){
+            document.getElementsByClassName("card-img-top")[i].setAttribute("src", menu[i].img);
+            document.getElementsByClassName("card-title")[i].innerHTML=menu[i].name;
+            document.getElementsByClassName("card-text")[i].innerHTML=menu[i].describe;
+            document.getElementsByClassName("card-link")[i].innerHTML="$"+menu[i].price.toString();
+          }
+        }
+        fillList(dish_number);
+        var counter=0;
+        const handleNumberChange=(n)=>{
+            counter+=n;
+            document.getElementById("counter").innerHTML=('<span id="number-title">數量</span>'+
+            '<button id="sub" type="submit"  onclick="handleNumberChange(-1)">-</button><span id="number">'+
+            counter+'</span><button id="add" type="submit" onclick="handleNumberChange(1)">+</button>');
+        }
+        handleNumberChange(counter);
+
+        const fillModal=(n)=>{
+          document.getElementById("modal-img").setAttribute("src", menu[n].img);
+          document.getElementsByClassName("modal-title")[0].innerHTML=menu[n].name;
+          document.getElementsByClassName("modal-body")[0].innerHTML=menu[n].describe;
+          document.getElementById("price").innerHTML=menu[n].price;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
